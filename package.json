@@ -14,6 +14,7 @@
   },
   "dependencies": {
     "soloalert": "^1.1.10",
-    "three": "^0.150.1"
+    "three": "^0.150.1",
+    "three.interactive": "^1.6.1"
   }
 }
