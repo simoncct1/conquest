@@ -17,7 +17,8 @@ let renderer = new THREE.WebGLRenderer();
 renderer.setSize(sizes.width, sizes.height);
 renderer.setSize(window.innerWidth, window.innerHeight);
 renderer.render(scene, camera);
-document.body.appendChild(renderer.domElement);
+renderer.domElement.id = 'main';
+document.getElementById("interface").appendChild(renderer.domElement);
 scene.background = new THREE.Color( 0x1C1D1D );
 //interaction
 const interactionManager = new InteractionManager(
@@ -33,10 +34,15 @@ controls.update();
 const geometry = new THREE.BoxGeometry( 1, 1, 1 );
 const material = new THREE.MeshBasicMaterial( { color: 0x00ff00 } );
 const cube = new THREE.Mesh( geometry, material );
+const cube2 = new THREE.Mesh( geometry, material );
 scene.add( cube );
+scene.add( cube2 );
+cube2.position.set( 2, 2, 2 );
 interactionManager.add(cube);
+var one = false;
 cube.addEventListener('click', (event) => {
-    
+     one = !one;
+    if(one== true){
     function init() {
         // create a scene, that will hold all our elements such as objects, cameras and lights.
         let scene = new THREE.Scene();
@@ -52,7 +58,8 @@ cube.addEventListener('click', (event) => {
         let renderer = new THREE.WebGLRenderer();
         renderer.setSize(sizes.width, sizes.height);
         // add the output of the render function to the HTML
-        document.body.appendChild(renderer.domElement);
+        renderer.domElement.id = 'bite';
+        document.getElementById("interface").appendChild(renderer.domElement);
     
         // var clock = new THREE.Clock();
         // function for re-rendering/animating the scene
@@ -62,7 +69,10 @@ cube.addEventListener('click', (event) => {
         }
         tick();
     }
-    init();
+    init();}
+    else{
+        document.getElementById("interface").removeChild(renderer.domElement.id ="bite");
+    }
   });
 camera.position.z = 5;
 

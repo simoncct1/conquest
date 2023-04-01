@@ -5,25 +5,27 @@ $contrast2: #c2c2c2;
 body{
     background-color: $base-color;
     font-family: 'Montserrat', sans-serif;
+    background-image: url('/sources/bg.png');
+    
 }
-a:link {
+#content div.params a:link {
   text-decoration: none;
-  color: black;
-}
-
-a:visited {
-  text-decoration: none;
-  color: black;
+  color: black !important;
 }
 
-a:hover {
+#content div.params a:visited {
   text-decoration: none;
-  color: black;
+  color: black !important;
 }
 
-a:active {
+#content div.params a:hover {
   text-decoration: none;
-  color: black;
+  color: black !important;
+}
+
+#content div.params a:active {
+  text-decoration: none;
+  color: black !important;
 }
 html {
     height: 100%;
@@ -44,7 +46,7 @@ html {
     background-color: #e6e6e6;
     max-height: 5vh; 
     display: flex; align-items: center; justify-content: space-between;
-    box-shadow:1px -1px 20px 0px #aaaaaa;
+    // box-shadow:1px -1px 20px 0px #aaaaaa;
     border-radius: 70px;
     margin-top:0;
     padding: 5px;
@@ -55,8 +57,8 @@ footer img.logo{
     border-radius: 50%;
     padding: -20px;
     margin-top: 0;    
-    box-shadow: 1px -8px 7px 0px rgb(255 255 255 / 25%),
-    1px 8px 7px 0px rgb(255 255 255 / 25%);
+    // box-shadow: 1px -8px 7px 0px rgb(255 255 255 / 25%),
+    // 1px 8px 7px 0px rgb(255 255 255 / 25%);
 }
 footer img.logo:hover{
   background-color: #e6e6e6;
@@ -89,6 +91,9 @@ footer div{
     margin-top: 5vh;
     margin-left: 5vh;
     margin-right: 5vh;
+    div a {
+      color: $contrast !important;
+    }
   }
 
   #content div img {
@@ -175,7 +180,7 @@ div.SoloAlert-wrapper div.SoloAlert-actions div.SoloAlert-actions button.SoloAle
     display:none;
     -webkit-animation: fadeOut 0.1s ease-in;
     animation: fadeOut 0.1s ease-in;
-    z-index: 11155;
+    z-index: 2;
   }
   div#params.params{
     // display: inline;
@@ -185,7 +190,8 @@ div.SoloAlert-wrapper div.SoloAlert-actions div.SoloAlert-actions button.SoloAle
     display: grid;
     grid-column: 3/6;
     grid-row: 4;
-    width: 50%;
+    width: 40%;
+    height: 90%;
    margin: auto;
     background-color: $contrast;
     padding-left: 20px;
@@ -193,10 +199,161 @@ div.SoloAlert-wrapper div.SoloAlert-actions div.SoloAlert-actions button.SoloAle
     border-radius: 10px;
     padding-bottom: 2vh;
     padding-top: 1vh;
-    box-shadow: rgb(255 255 255 / 25%) 1px -8px 7px 0px, rgb(255 255 255 / 25%) 0px 0px 9px 7px;
+    box-shadow:  rgba(255, 255, 255, 0.096) 0px 0px 9px 7px;
     -webkit-animation: fadeIn 0.1s ease-in;
     animation: fadeIn 0.1s ease-in;
+    overflow: hidden;
+    display: inline-block;
+word-break: break-word;
+    p{
+      display: inline-block;
+word-break: break-word;
+    }
   }
+  div#profil{
+   display: none;
+  }
+  
+  div#profil.ok{
+    z-index: 3;
+    display: grid;
+    align-content: space-evenly;
+    grid-column: 5/7;
+    grid-row: 4;
+    width: 40%;
+    height: 80%;
+    padding-bottom: 2vh;
+    padding-top: 1vh;
+   margin: auto;
+   
+   margin-left: 3vw;
+    background-color: $contrast;
+    padding-left: 20px;
+    padding-right: 30px;
+    border-radius: 10px;
+    -webkit-animation: fadeIn 0.1s ease-in;
+    animation: fadeIn 0.1s ease-in;
+     p{
+      padding-top: 10px;
+      margin: 5%;
+      margin-top: -25%;
+      text-align: center;
+      border-top: 1px solid #1e1e1e;
+     }
+     img{
+      height: 50%;
+      margin: auto;
+      margin-top: 15%;
+       border: 5px solid black;
+      border-radius: 50%;
+     }
+   
+  }
+  div#qual{
+    display: none;
+   }
+   
+   div#qual.ok{
+     z-index: 3;
+     display: grid;
+     align-content: center;
+     grid-column: 5/7;
+     grid-row: 4;
+     width: 40%;
+     height: 40%;
+     padding-bottom: 2vh;
+     padding-top: 1vh;
+    margin: auto;
+    margin-left: 3vw;
+     background-color: $contrast;
+     padding-left: 20px;
+     padding-right: 30px;
+     border-radius: 10px;
+     -webkit-animation: fadeIn 0.1s ease-in;
+     animation: fadeIn 0.1s ease-in;
+      .options{
+        align-items: center;
+        display: inline-flex;
+        justify-items: stretch;
+        justify-content: space-evenly;
+        p{
+          font-size: 14px;
+          margin-top: -2vh;
+        }
+      }
+   }
+
+   div#screen{
+    display: none;
+   }
+   
+   div#screen.ok{
+     z-index: 3;
+     display: grid;
+     grid-template-columns: repeat(3, 1fr);
+     grid-template-rows: 10% 45% 45%;
+     gap: 10px;
+     align-items: center;   
+     grid-column: 5/7;
+     grid-row: 4;
+     width: 55%;
+     height: 85%;
+     padding-bottom: 2vh;
+     padding-top: 1vh;
+    margin: auto;
+    margin-left: 3vw;
+     background-color: $contrast;
+     padding-left: 20px;
+     padding-right: 30px;
+     border-radius: 10px;
+     -webkit-animation: fadeIn 0.1s ease-in;
+     animation: fadeIn 0.1s ease-in;
+     
+        p{
+      
+          font-size: 16px;
+         text-align: left;
+          grid-row: 1;
+          grid-column: 1/3;
+         margin: auto;
+        margin-top: 10px;
+        margin-left: -4px;
+        }
+        img{
+          max-width: 100%;
+        }
+        img#un{
+          display: subgrid;
+          grid-row: 2;
+          grid-column: 1;
+        }
+        img#de{
+          display: subgrid;
+          grid-row: 2;
+          grid-column: 2;
+        }
+        img#tr{
+          display: subgrid;
+          grid-row: 2;
+          grid-column: 3;
+        }
+        img#qu{
+          display: subgrid;
+          grid-row: 3;
+          grid-column: 1;
+        }
+        img#ci{
+          display: subgrid;
+          grid-row: 3;
+          grid-column: 2;
+        }
+        img#si{
+          display: subgrid;
+          grid-row: 3;
+          grid-column: 3;
+        }
+      
+   }
   div#params div{
   margin-top: 1vh;
    padding-top: 5px;

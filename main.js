@@ -81,6 +81,7 @@ SoloAlert.prompt({
 document.getElementById('logo').addEventListener("click", openParams);
 var click = false;
 function openParams(){
+    console.log(click);
     click = !click
     if(click==true){
         document.getElementById('params').classList.add("params");
@@ -89,4 +90,66 @@ function openParams(){
     }
    
 }
+//open profile
+document.getElementById('profile').addEventListener("click", openProfile);
+var click2 = false;
+function openProfile(){
+    click2 = !click2
+    if(click2==true){
+        document.getElementById('profil').classList.add("ok");
+        document.getElementById('qual').classList.remove("ok")
+        document.getElementById('screen').classList.remove("ok"); 
+    }else{
+        document.getElementById('profil').classList.remove("ok"); 
+      ; 
+    }
+   
+}
+//set div profile height
+var hauteur = document.getElementById('params').style.height
+document.getElementById('profil').style.height = hauteur;
 
+//open paramsQual
+document.getElementById('param').addEventListener("click", openQual);
+var click3 = false;
+
+function openQual(){
+   
+    click3 = !click3
+    if(click3==true){
+        document.getElementById('qual').classList.add("ok");
+        document.getElementById('profil').classList.remove("ok"); 
+        document.getElementById('screen').classList.remove("ok"); 
+    }else{
+        document.getElementById('qual').classList.remove("ok"); 
+        
+    }
+   
+}
+
+document.getElementById('ps').addEventListener("click", openScreen);
+var click4 = false;
+
+function openScreen(){
+   
+    click4 = !click4
+    if(click4==true){
+        document.getElementById('screen').classList.add("ok");
+        document.getElementById('profil').classList.remove("ok"); 
+        document.getElementById('qual').classList.remove("ok")
+    }else{
+        document.getElementById('screen').classList.remove("ok"); 
+        
+    }
+   
+}
+//backgrounds
+const bkg = document.getElementById("screen")
+const bg= e => { 
+  
+    const result =  e.target.getAttribute('src');
+    document.body.style.backgroundImage = ("url(" + result + ")");
+   
+  }
+
+  bkg.addEventListener("click", bg)
