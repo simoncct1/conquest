@@ -6,8 +6,6 @@ var scene = new THREE.Scene();
 // camera
 var camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, .1, 1000);
 
-
-
 // renderer
 const sizes = {
      width: window.innerWidth/4,
@@ -81,7 +79,7 @@ cube.addEventListener('click', (event) => {
     else{
         
         var map1 = document.getElementById("interface");
-        map1.removeChild(map1.children[1]);
+        map1.removeChild(map1.children[2]);
       
     }
   });
@@ -119,7 +117,7 @@ cube.addEventListener('click', (event) => {
    else{
        
        var map1 = document.getElementById("interface");
-       map1.removeChild(map1.children[1]);
+       map1.removeChild(map1.children[2]);
      
    }
  });
