@@ -63,19 +63,36 @@ SoloAlert.prompt({
 }).then(value => {
        var password= 1234;
             if (value == password) {
-   window.location.replace(
-    "index.html"
-  )      
-    }
-    else 
-    {
-        SoloAlert.alert({
-            title:"Mauvais mot de passe",
-            body:"Veuillez ré-essayer",
-            useTransparency: true,
-          })
-    
-    }
+                SoloAlert.prompt({
+                    // dialog title
+                    title: "Félicitations",
+                    // dialog content
+                    body: "Veuillez encoder votre addresse mail",
+                    // input type
+                    type: "email",
+        
+                    theme: "dark",
+                    // additional HTML content
+                    html: "",
+                    useTransparency: true
+                }).then(value => {
+                 
+                              
+                    //   function createCookie(name, value, days) {
+                    //     var expires;
+                    //     if (days) {
+                    //       var date = new Date();
+                    //       date.setTime(date.getTime() + (days * 24 * 60 * 60 * 1000));
+                    //       expires = "; expires=" + date.toGMTString();
+                    //     }
+                    //     else {
+                    //       expires = "";
+                    //     }
+                    //     document.cookie = escape(name) + "=" + escape(value) + expires + "; path=/";      
+                        
+                    }
+              
+                })}
 })}
 //redirect to index
 document.getElementById('logo').addEventListener("click", openParams);

@@ -8,6 +8,8 @@ body{
     background-color: $base-color;
     font-family: 'Montserrat', sans-serif;
     background-image: url('/sources/bg.png');
+    background-repeat: no-repeat;
+    background-size: 100%;
     
 }
 #content div.params a:link {
