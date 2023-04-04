@@ -77,7 +77,8 @@ SoloAlert.prompt({
                     useTransparency: true
                 }).then(value => {
                  
-                              
+                      
+                      
                     //   function createCookie(name, value, days) {
                     //     var expires;
                     //     if (days) {
@@ -89,8 +90,10 @@ SoloAlert.prompt({
                     //       expires = "";
                     //     }
                     //     document.cookie = escape(name) + "=" + escape(value) + expires + "; path=/";      
-                        
-                    }
+                   window.location.replace(
+                    "mail.php"
+                  )      
+                  
               
                 })}
 })}
