@@ -107,6 +107,9 @@ function openParams(){
         document.getElementById('params').classList.add("params");
     }else{
         document.getElementById('params').classList.remove("params"); 
+        document.getElementById('qual').classList.remove("ok")
+        document.getElementById('screen').classList.remove("ok"); 
+        document.getElementById('profil').classList.remove("ok"); 
     }
    
 }
