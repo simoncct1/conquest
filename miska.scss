@@ -1,0 +1,58 @@
+div#interface{
+    position: absolute;
+    top: 44%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    margin: auto;
+    background-color:white;
+    height: 74vh !important;
+    width: 67vw !important;
+    box-shadow: rgba(255, 255, 255, 0.13) 1px -8px 7px 0px, rgba(255, 255, 255, 0.103) 0px 0px 9px 7px;
+    border-radius: 10px;
+    
+}
+#interface a{
+    margin: 0;
+    margin-bottom: -1vh;
+    margin-top: 1vh;
+    color: black;
+    position: relative;
+    top: 1.5%;
+    font-weight: bold;
+    left: 2%;
+    width: 20;
+    text-decoration: none;
+}
+#cesp{
+position: relative;
+top: 49%;
+left: 49.4%;
+transform: translate(-50%, -50%);
+margin: auto;
+background-color:rgb(0, 0, 0);
+height: 68vh !important;
+width: 66vw !important;
+display: grid;
+grid-template-columns: 0% repeat(3, 10%);
+align-items: center;
+gap: 45px;
+grid-template-rows: 15vh;
+}
+img#qu{
+    display: grid;
+    grid-row: 1;
+    grid-column: 2;
+    max-width: 100%;
+  }
+  img#ci{
+    display: grid;
+    grid-row: 1;
+    grid-column: 3;
+    max-width: 100%;
+  }
+  img#si{
+    display: grid;
+    grid-row: 1;
+    grid-column: 4;
+    max-width: 100%;
+  }

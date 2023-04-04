@@ -5,10 +5,12 @@
     <meta http-equiv="Permissions-Policy" content="interest-cohort=(true)">
     <link rel="icon" type="image/svg+xml" href="/sources/logo.svg" />
     <link rel="stylesheet" href="style.scss">
+    <link rel="stylesheet" href="budget.scss">
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>F.N.D.B</title>
     <script type="module" src="/main.js"></script>
     <script src="/node_modules/soloalert/index.js"></script>
+    <script type="module" src="/budget.js"></script>
     <style>
       @import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
       </style>
@@ -17,7 +19,7 @@
     <div id="content">
       <div class="one"><a href="/map.html"><img  src="/sources/folder.png" alt=""><p>CARTES</p></a></div>
       <div class="two"><a href="/cesp.html"><img  src="/sources/folder.png" alt=""><p>C.ESP</p></a></div>
-      <div class="three" id="three"><a href="/budget.html"><img  src="/sources/folder.png" alt=""><p>BUDGETS</p></a></div>
+      <div class="three" id="three"><img  src="/sources/folder.png" alt=""><p>BUDGETS</p></div>
       <div class="four" id="MS"><img  src="/sources/folder.png" alt=""><p>MISKATONIC</p></div>
       <div class="five" id="DB"><img  src="/sources/folder.png" alt=""><p>DB</p></div>
       <div id="params">
@@ -55,7 +57,61 @@
     <!-- <div id="prompt"><p>entrez le mot de passe</p><input type="text"><button></button></div> -->
     <div id="alert"></div>
 
- 
+    <div id="interface"> <a href="index.html">X</a><div id="budget">
+      <table>
+        <thead>
+          <tr>
+            <th style="font-weight: bolder;">2021/22</th>
+            <th>Expéditions</th>
+            <th>R.H</th>
+            <th>Lobying</th>
+            <th>R.M</th>
+            <th>Divers</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <th>Budget</th>
+            <td>1</td>
+            <td>2</td>
+            <td>3</td>
+            <td>8</td>
+            <td>9</td>
+          </tr>
+          <tr>
+            <th>Couts prévus</th>
+            <td>4</td>
+            <td>5</td>
+            <td>6</td>
+            <td>8</td>
+            <td>9</td>
+          </tr>
+          <tr>
+            <th>Couts réels</th>
+            <td>7</td>
+            <td>8</td>
+            <td>9</td>
+            <td>8</td>
+            <td>9</td>
+          </tr>
+          <tr>
+            <th>Revenus</th>
+            <td>7</td>
+            <td>8</td>
+            <td>9</td>
+            <td>8</td>
+            <td>9</td>
+          </tr>
+          <tr>
+            <th>Total</th>
+            <td>7</td>
+            <td>8</td>
+            <td>9</td>
+            <td>8</td>
+            <td>9</td>
+          </tr>
+        </tbody>
+      </table></div></div>
 
   </body>
 </html>

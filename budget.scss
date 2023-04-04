@@ -1,0 +1,50 @@
+div#interface{
+    position: absolute;
+    top: 44%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    margin: auto;
+    background-color:white;
+    height: 74vh !important;
+    width: 67vw !important;
+    box-shadow: rgba(255, 255, 255, 0.13) 1px -8px 7px 0px, rgba(255, 255, 255, 0.103) 0px 0px 9px 7px;
+    border-radius: 10px;
+    
+}
+#interface a{
+    margin: 0;
+    margin-bottom: -1vh;
+    margin-top: 1vh;
+    color: black;
+    position: relative;
+    top: 1.5%;
+    font-weight: bold;
+    left: 2%;
+    width: 20;
+    text-decoration: none;
+}
+#budget{
+position: relative;
+top: 49%;
+left: 49.4%;
+transform: translate(-50%, -50%);
+margin: auto;
+background-color:rgb(0, 0, 0);
+color: white;
+height: 68vh !important;
+width: 66vw !important;
+}
+table{
+  position: relative;
+top: 4%;
+left: 4%;
+max-width: 70%;
+height: 90%;
+ tr{
+  margin-top: 10vh;
+ }
+ th, td {
+  padding: 15px;
+  border: 1px solid white;
+}
+}

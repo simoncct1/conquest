@@ -29,7 +29,7 @@ SoloAlert.prompt({
        var password= 1234;
             if (value == password) {
    window.location.replace(
-    "index.html"
+    "miska.html"
   )      
     }
     else 
