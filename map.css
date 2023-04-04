@@ -16,6 +16,14 @@ canvas#bite{
     left: 15%;
   
 }
+canvas#map2{
+    height: 30vh !important;
+    width:16vw !important; 
+    position: absolute;
+    top: 10%;
+    right: 15%;
+  
+}
 div#interface{
     position: absolute;
     top: 45%;
@@ -29,4 +37,16 @@ div#interface{
     border-radius: 10px;
     
 }
-
+div#changes{
+    z-index: 2;
+    position: absolute;
+    top: 79%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    margin: auto;
+    background-color:rgba(160, 4, 4, 0);
+    height: 2vh !important;
+    width: 66vw !important;
+    border-radius: 10px;
+    
+}
