@@ -1,4 +1,8 @@
 //affichage date
+function cc(){
+    console.log("cc");
+}
+cc();
 var today = new Date();
 var date = today.getDate()+'-'+(today.getMonth()+1)+'-'+today.getFullYear();
 var time = today.getHours() + ":" + today.getMinutes();
@@ -7,7 +11,7 @@ document.getElementById('clock').innerHTML =
     date +"</br>" + time;
 console.log(dateTime)
 //passwords
-import * as SoloAlert from "soloalert"
+import * as SoloAlert from "./node_modules/soloalert/index.js";
 document.getElementById('MS').addEventListener("click", validatePassMS);
 function validatePassMS(){
     

@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -10,31 +11,34 @@
     <style>
       @import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
       </style>
+
 </head>
 <body class="login-page">
+
 <div class="login-box">
-    <img src="/sources/logo.png" alt="">
+    <img src="./sources/logo.png" alt="">
         <h2 class="heading-login-box">Login</h2>
-        <form>
+        <form action="auth.php" method="post">
             <div class="user-box">
-                <input class="user-box-input" type="text" required>
+                <input class="user-box-input" type="text" name="user" required>
                 <label class="user-box-label">Nom d'utilisateur</label>
             </div>
             <div class="user-box">
-                <input class="user-box-input" type="password" required>
+                <input class="user-box-input" type="password" name="pass" required>
                 <label class="user-box-label">Mot de passe</label>
             </div>
-            <a type="submit" class="login-box-button" href="index.php">
+            <button type="submit" class="login-box-button">
                 <span></span>
                 <span></span>
                 <span></span>
                 <span></span>
-                Connexion 
-            </a>
-            <a type="submit" class="login-box-button nope" href="#">
+                Connexion </button>
+            <a class="login-box-button nope" href="#">
                 Pas de compte?
             </a>
         </form>
     </div>
+   
 </body>
+
 </html>

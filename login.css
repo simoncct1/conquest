@@ -1,7 +1,7 @@
 .login-page {
     font-family: 'Montserrat', sans-serif;
     background: rgb(95, 95, 95);
-    background-image: url('/sources/bg.png');
+    background-image: url('./sources/bg.png');
     background-repeat: no-repeat;
     background-size: 100%;
     backdrop-filter: blur(12px) brightness(130%) ;

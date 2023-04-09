@@ -4,13 +4,10 @@ $contrast2: #c2c2c2;
 p{
   color: #e6e6e6;
 }
-#params div p{
-  
-}
 body{
     background-color: $base-color;
     font-family: 'Montserrat', sans-serif;
-    background-image: url('/sources/bg.png');
+    background-image: url('.//sources/bg.png');
     background-repeat: no-repeat;
     background-size: 100%;
     
