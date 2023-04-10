@@ -11,7 +11,7 @@ document.getElementById('clock').innerHTML =
     date +"</br>" + time;
 console.log(dateTime)
 //passwords
-import * as SoloAlert from "./node_modules/soloalert/index.js";
+import * as SoloAlert from "soloalert";
 document.getElementById('MS').addEventListener("click", validatePassMS);
 function validatePassMS(){
     
@@ -180,3 +180,6 @@ const bg= e => {
   }
 
   bkg.addEventListener("click", bg)
+
+  //snow
+  
