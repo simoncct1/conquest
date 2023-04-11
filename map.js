@@ -1,6 +1,7 @@
 import * as THREE from 'three';
 import { OrbitControls } from 'three/addons/controls/OrbitControls.js';
 import { InteractionManager } from 'three.interactive';
+import { GLTFLoader } from 'three/addons/loaders/GLTFLoader.js';
 // scene
 var scene = new THREE.Scene();
 // camera
@@ -35,6 +36,23 @@ function construct1(){
         var obj = scene.children[i];
         scene.remove(obj); 
    }
+   const alight = new THREE.AmbientLight( 0x404040, 3.5, 3800 ); // soft white light
+   alight.position.y = 2;
+   scene.add( alight );
+   const loader = new GLTFLoader();
+   var map= new THREE.Object3D();
+loader.load("/sources/map.glb",
+    function ( gltf ) {
+        map = gltf.scene
+        scene.add( gltf.scene );
+
+    },
+    function onError(err) {
+        console.log('An error happened');
+    }
+   );
+
+
 const geometry = new THREE.BoxGeometry( 1, 1, 1 );
 const material = new THREE.MeshBasicMaterial( { color: 0x00ff00 } );
 const cube = new THREE.Mesh( geometry, material );
@@ -150,6 +168,21 @@ function construct3(){
         scene.remove(obj); 
    }
    interactionManager.destroy;
+   const alight = new THREE.AmbientLight( 0x404040, 3.5, 3800 ); // soft white light
+   alight.position.y = 2;
+   scene.add( alight );
+   const loader = new GLTFLoader();
+   var map= new THREE.Object3D();
+loader.load("/sources/mapzones.glb",
+    function ( gltf ) {
+        map = gltf.scene
+        scene.add( gltf.scene );
+
+    },
+    function onError(err) {
+        console.log('An error happened');
+    }
+   );
     const geometrieee = new THREE.BoxGeometry( 1, 1, 1 );
 const materialeee = new THREE.MeshBasicMaterial( { color: 0x244f55 } );
 const cubez = new THREE.Mesh( geometrieee, materialeee );
