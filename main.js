@@ -1,4 +1,8 @@
 //affichage date
+function cc(){
+    console.log("cc");
+}
+cc();
 var today = new Date();
 var date = today.getDate()+'-'+(today.getMonth()+1)+'-'+today.getFullYear();
 var time = today.getHours() + ":" + today.getMinutes();
@@ -7,7 +11,7 @@ document.getElementById('clock').innerHTML =
     date +"</br>" + time;
 console.log(dateTime)
 //passwords
-import * as SoloAlert from "soloalert"
+import * as SoloAlert from "soloalert";
 document.getElementById('MS').addEventListener("click", validatePassMS);
 function validatePassMS(){
     
@@ -176,3 +180,28 @@ const bg= e => {
   }
 
   bkg.addEventListener("click", bg)
+
+  //snow
+document.getElementById("snow").addEventListener('mouseover', snow);
+document.getElementById("snow").addEventListener('mouseout', unsnow);
+import Snowflakes from 'magic-snowflakes';
+const snowflakes = new Snowflakes({
+    color: '#ffffff',
+    count: 200,
+    speed: 3,
+    minSize: 10,
+    maxSize: 20,
+    minOpacity: 0.3,
+    maxOpacity: 0.8,
+});
+snowflakes.hide();
+ function snow() {
+    snowflakes.show();
+   snowflakes.start();
+}
+function unsnow(){
+    console.log("cc")
+    snowflakes.hide();
+    snowflakes.stop();
+}
+

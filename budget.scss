@@ -38,7 +38,8 @@ table{
   position: relative;
 top: 4%;
 left: 4%;
-max-width: 70%;
+table-layout: fixed;
+width: 90%;
 height: 90%;
  tr{
   margin-top: 10vh;
