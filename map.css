@@ -62,3 +62,9 @@ div#changes{
     border-radius: 10px;
     
 }
+div#changes input{
+     background-color: white;
+     border: 1px solid grey;
+     padding: 5px;
+     font-family: 'Montserrat', sans-serif;
+}
