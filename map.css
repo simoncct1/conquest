@@ -52,11 +52,11 @@ div#interface{
 div#changes{
     z-index: 2;
     position: absolute;
-    top: 79%;
+    top: 77%;
     left: 50%;
     transform: translate(-50%, -50%);
     margin: auto;
-    background-color:rgba(160, 4, 4, 0);
+    background-color:rgba(255, 255, 255, 0);
     height: 2vh !important;
     width: 66vw !important;
     border-radius: 10px;
@@ -64,7 +64,10 @@ div#changes{
 }
 div#changes input{
      background-color: white;
-     border: 1px solid grey;
-     padding: 5px;
+     border: 0px solid rgb(0, 0, 0);
+     padding: 8px;
      font-family: 'Montserrat', sans-serif;
+}
+div#changes input:hover{
+    box-shadow: rgba(255, 255, 255, 0.13) 1px -8px 7px 0px, rgba(255, 255, 255, 0.103) 0px 0px 9px 7px;
 }

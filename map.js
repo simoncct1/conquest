@@ -18,7 +18,9 @@ renderer.setSize(window.innerWidth, window.innerHeight);
 renderer.render(scene, camera);
 renderer.domElement.id = 'main';
 document.getElementById("interface").appendChild(renderer.domElement);
-scene.background = new THREE.Color( 0x1C1D1D );
+scene.background = new THREE.Color( 0x000000 );
+camera.position.set(0, 30, 0);
+        camera.lookAt(0,0,0);
 //interaction
 const interactionManager = new InteractionManager(
     renderer,
@@ -36,6 +38,8 @@ function construct1(){
         var obj = scene.children[i];
         scene.remove(obj); 
    }
+   camera.position.set(0, 30, 0);
+        camera.lookAt(0,0,0);
    const alight = new THREE.AmbientLight( 0x404040, 3.5, 3800 ); // soft white light
    alight.position.y = 2;
    scene.add( alight );
@@ -45,7 +49,9 @@ loader.load("/sources/map.glb",
     function ( gltf ) {
         map = gltf.scene
         scene.add( gltf.scene );
-
+      
+       gltf.scene.position.set(-1.5, 0, -0.5);
+        gltf.scene.scale.set(1,1,1);
     },
     function onError(err) {
         console.log('An error happened');
@@ -53,13 +59,23 @@ loader.load("/sources/map.glb",
    );
 
 
-const geometry = new THREE.BoxGeometry( 1, 1, 1 );
+const radargeo = new THREE.CircleGeometry(50, 102);
+const texture = new THREE.TextureLoader().load( "/sources/radar.png" );
+const bumpTexture = new THREE.TextureLoader().load('sources/bump.jpg')
+const materiale = new THREE.MeshBasicMaterial( { map: texture} );
+
+
+
+let geometry = new THREE.BoxGeometry(1,1,1);
 const material = new THREE.MeshBasicMaterial( { color: 0x00ff00 } );
+const floor = new THREE.Mesh( radargeo, materiale);
 const cube = new THREE.Mesh( geometry, material );
 const cube2 = new THREE.Mesh( geometry, material );
 scene.add( cube );
 scene.add( cube2 );
+scene.add(floor);
 cube2.position.set( 2, 0, 0 );
+floor.rotateX(-Math.PI / 2);
 interactionManager.add(cube);
 interactionManager.add(cube2);
 var one = false;
@@ -72,7 +88,6 @@ cube.addEventListener('click', (event) => {
         // create a camera, which defines where we're looking at
         let camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 100);
         // tell the camera where to look
-        camera.position.set(0, 0, 10);
         // create a render and set the size
         const sizes = {
             width: window.innerWidth,
@@ -152,13 +167,33 @@ function construct2(){
         scene.remove(obj); 
         
    }
-    const geometrieee = new THREE.BoxGeometry( 1, 1, 1 );
-const materialeee = new THREE.MeshBasicMaterial( { color: 0x244f55 } );
-const cubez = new THREE.Mesh( geometrieee, materialeee );
-const cubezz = new THREE.Mesh( geometrieee, materialeee );
-scene.add( cubez );
-scene.add( cubezz );
-cubezz.position.set( 3, 0, 0 );
+   interactionManager.destroy;
+   const alight = new THREE.AmbientLight( 0x404040, 3.5, 3800 ); // soft white light
+   alight.position.y = 2;
+   scene.add( alight );
+   const loader = new GLTFLoader();
+   var map= new THREE.Object3D();
+   loader.load("/sources/map.glb",
+       function ( gltf ) {
+           map = gltf.scene
+           scene.add( gltf.scene );
+         
+          gltf.scene.position.set(-1.5, 0, -0.5);
+           gltf.scene.scale.set(1,1,1);
+       },
+       function onError(err) {
+           console.log('An error happened');
+       }
+      );
+   
+   
+   const radargeo = new THREE.CircleGeometry(50, 102);
+   const texture = new THREE.TextureLoader().load( "/sources/radar.png" );
+   const materiale = new THREE.MeshBasicMaterial( { map: texture } );
+   const floor = new THREE.Mesh( radargeo, materiale);
+   scene.add(floor);
+
+floor.rotateX(-Math.PI / 2);
 }
 document.getElementById("3").addEventListener('click', construct3);
 
@@ -173,25 +208,29 @@ function construct3(){
    scene.add( alight );
    const loader = new GLTFLoader();
    var map= new THREE.Object3D();
-loader.load("/sources/mapzones.glb",
-    function ( gltf ) {
-        map = gltf.scene
-        scene.add( gltf.scene );
+   loader.load("/sources/map.glb",
+       function ( gltf ) {
+           map = gltf.scene
+           scene.add( gltf.scene );
+         
+          gltf.scene.position.set(-1.5, 0, -0.5);
+           gltf.scene.scale.set(1,1,1);
+       },
+       function onError(err) {
+           console.log('An error happened');
+       }
+      );
+   
+   
+   const radargeo = new THREE.CircleGeometry(50, 102);
+   const texture = new THREE.TextureLoader().load( "/sources/radar.png" );
+   const materiale = new THREE.MeshBasicMaterial( { map: texture } );
+   const floor = new THREE.Mesh( radargeo, materiale);
+   scene.add(floor);
 
-    },
-    function onError(err) {
-        console.log('An error happened');
-    }
-   );
-    const geometrieee = new THREE.BoxGeometry( 1, 1, 1 );
-const materialeee = new THREE.MeshBasicMaterial( { color: 0x244f55 } );
-const cubez = new THREE.Mesh( geometrieee, materialeee );
-const cubezz = new THREE.Mesh( geometrieee, materialeee );
-scene.add( cubez );
-scene.add( cubezz );
-cubezz.position.set( 2, 0, 0 );
+floor.rotateX(-Math.PI / 2);
 }
-camera.position.z = 5;
+
 
 
 //anim
