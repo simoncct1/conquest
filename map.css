@@ -9,20 +9,24 @@ canvas{
     width: 66vw !important;
 }
 canvas#bite{
-    height: 30vh !important;
-    width:16vw !important; 
+    height: 40vh !important;
+    width:40vw !important; 
     position: absolute;
-    top: 10%;
+    top: 25%;
     left: 15%;
-  
+    box-shadow: rgba(255, 255, 255, 0.13) 1px -8px 7px 0px, rgba(255, 255, 255, 0.103) 0px 0px 9px 7px;
+    border-radius: 10px;
+    border: 8px solid white;
 }
 canvas#map2{
-    height: 30vh !important;
-    width:16vw !important; 
+    height: 40vh !important;
+    width:40vw !important;  
     position: absolute;
-    top: 10%;
+    top: 25%;
     right: 15%;
-  
+    box-shadow: rgba(255, 255, 255, 0.13) 1px -8px 7px 0px, rgba(255, 255, 255, 0.103) 0px 0px 9px 7px;
+    border-radius: 10px;
+    border: 8px solid white;
 }
 div#interface{
     position: absolute;
