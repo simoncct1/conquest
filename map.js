@@ -2,6 +2,7 @@ import * as THREE from 'three';
 import { OrbitControls } from 'three/addons/controls/OrbitControls.js';
 import { InteractionManager } from 'three.interactive';
 import { GLTFLoader } from 'three/addons/loaders/GLTFLoader.js';
+import { Reflector } from 'three/examples/jsm/objects/Reflector'
 // scene
 var scene = new THREE.Scene();
 // camera
@@ -16,6 +17,7 @@ let renderer = new THREE.WebGLRenderer();
 renderer.setSize(sizes.width, sizes.height);
 renderer.setSize(window.innerWidth, window.innerHeight);
 renderer.render(scene, camera);
+renderer.antialias = true;
 renderer.domElement.id = 'main';
 document.getElementById("interface").appendChild(renderer.domElement);
 scene.background = new THREE.Color( 0x000000 );
@@ -38,11 +40,14 @@ function construct1(){
         var obj = scene.children[i];
         scene.remove(obj); 
    }
-   camera.position.set(0, 30, 0);
+   camera.position.set(0, 40, 18);
         camera.lookAt(0,0,0);
-   const alight = new THREE.AmbientLight( 0xffffff, 1.5, 1800 ); 
+   const alight = new THREE.AmbientLight( 0xbbbbbb, 2.5, 4800 ); 
+   
    alight.position.y = 3;
+ 
    scene.add( alight );
+ 
    const loader = new GLTFLoader();
    var map= new THREE.Object3D();
 loader.load("/sources/map1.glb",
@@ -50,8 +55,8 @@ loader.load("/sources/map1.glb",
         map = gltf.scene
         scene.add( gltf.scene );
       
-       gltf.scene.position.set(-1.5, 0, -0.5);
-        gltf.scene.scale.set(0.06,0.06,0.06);
+    //    gltf.scene.position.set(-1.5, 0, -0.5);
+        gltf.scene.scale.set(0.1,0.1,0.1);
     },
     function onError(err) {
         console.log('An error happened');
@@ -64,17 +69,33 @@ const texture = new THREE.TextureLoader().load( "/sources/radar.png" );
 const bumpTexture = new THREE.TextureLoader().load('sources/bump.jpg')
 const materiale = new THREE.MeshBasicMaterial( { map: texture} );
 
+// let geometrie, groundMirror;
 
+// geometrie = new THREE.CircleGeometry( 1000, 64 );
+// groundMirror = new Reflector( geometrie, {
+//     clipBias: 0.003,
+//     textureWidth: window.innerWidth * window.devicePixelRatio,
+//     textureHeight: window.innerHeight * window.devicePixelRatio,
+//     color: 0xb5b5b5
+// } );
+// groundMirror.position.y = 0.5;
+// groundMirror.rotateX( - Math.PI / 2 );
+// scene.add( groundMirror );
 
-let geometry = new THREE.BoxGeometry(0.7,1.5,0.7);
-const material = new THREE.MeshBasicMaterial( { color: 0xff0000 } );
+let geometry = new THREE.CylinderGeometry( 0.6,0.6, 1, 32 ); 
+const material = new THREE.MeshBasicMaterial( { color: 0xdd0000 } );
 const floor = new THREE.Mesh( radargeo, materiale);
 const cube = new THREE.Mesh( geometry, material );
 const cube2 = new THREE.Mesh( geometry, material );
+// groundMirror =new THREE.Mesh(geometrie, material);
+// groundMirror.position.y = 0.5;
+// groundMirror.rotateX( - Math.PI / 2 );
+// scene.add(groundMirror);
 scene.add( cube );
 scene.add( cube2 );
-scene.add(floor);
-cube2.position.set( 2, 0, 4 );
+// scene.add(floor);
+cube.position.set( 0, 25, 0 );
+cube2.position.set( 2, 24.6, 4 );
 floor.rotateX(-Math.PI / 2);
 interactionManager.add(cube);
 interactionManager.add(cube2);
@@ -103,12 +124,12 @@ cube.addEventListener('click', (event) => {
            controls2.update();
            
            let materialArray = [];
-           let texture_ft = new THREE.TextureLoader().load( '/sources/winterskydayft.bmp');
-           let texture_bk = new THREE.TextureLoader().load( '/sources/winterskydaybk.bmp');
-           let texture_up = new THREE.TextureLoader().load( '/sources/winterskydayup.bmp');
-           let texture_dn = new THREE.TextureLoader().load( '/sources/winterskydaydn.bmp');
-           let texture_rt = new THREE.TextureLoader().load( '/sources/winterskydayrt.bmp');
-           let texture_lf = new THREE.TextureLoader().load( '/sources/winterskydaylf.bmp'); 
+           let texture_ft = new THREE.TextureLoader().load( '/sources/winterskydayft.png');
+           let texture_bk = new THREE.TextureLoader().load( '/sources/winterskydaybk.png');
+           let texture_up = new THREE.TextureLoader().load( '/sources/winterskydayup.png');
+           let texture_dn = new THREE.TextureLoader().load( '/sources/winterskydaydn.png');
+           let texture_rt = new THREE.TextureLoader().load( '/sources/winterskydayrt.png');
+           let texture_lf = new THREE.TextureLoader().load( '/sources/winterskydaylf.png'); 
     
            materialArray.push(new THREE.MeshBasicMaterial( { map: texture_ft }));
            materialArray.push(new THREE.MeshBasicMaterial( { map: texture_bk }));
@@ -215,18 +236,20 @@ function construct2(){
         
    }
    interactionManager.destroy;
-   const alight = new THREE.AmbientLight( 0xffffff, 1.5, 1800 ); 
+   camera.position.set(0, 40, 18);
+        camera.lookAt(0,0,0);
+   const alight = new THREE.AmbientLight( 0xbbbbbb, 2.5, 4800 ); 
    alight.position.y = 2;
    scene.add( alight );
    const loader = new GLTFLoader();
    var map= new THREE.Object3D();
-   loader.load("/sources/map1.glb",
+   loader.load("/sources/map2.glb",
    function ( gltf ) {
        map = gltf.scene
        scene.add( gltf.scene );
      
-      gltf.scene.position.set(-1.5, 0, -0.5);
-       gltf.scene.scale.set(0.06,0.06,0.06);
+    //   gltf.scene.position.set(-1.5, 0, -0.5);
+       gltf.scene.scale.set(0.1,0.1,0.1);
    },
    function onError(err) {
        console.log('An error happened');
@@ -238,7 +261,7 @@ function construct2(){
    const texture = new THREE.TextureLoader().load( "/sources/radar.png" );
    const materiale = new THREE.MeshBasicMaterial( { map: texture } );
    const floor = new THREE.Mesh( radargeo, materiale);
-   scene.add(floor);
+//    scene.add(floor);
 
 floor.rotateX(-Math.PI / 2);
 }
@@ -250,6 +273,8 @@ function construct3(){
         scene.remove(obj); 
    }
    interactionManager.destroy;
+   camera.position.set(0, 40, 18);
+        camera.lookAt(0,0,0);
    const alight = new THREE.AmbientLight( 0xffffff, 1.5, 1800 ); 
    alight.position.y = 2;
    scene.add( alight );
@@ -261,7 +286,7 @@ function construct3(){
        scene.add( gltf.scene );
      
       gltf.scene.position.set(-1.5, 0, -0.5);
-       gltf.scene.scale.set(0.06,0.06,0.06);
+       gltf.scene.scale.set(0.1,0.1,0.1) ;
    },
    function onError(err) {
        console.log('An error happened');
@@ -272,7 +297,7 @@ function construct3(){
    const texture = new THREE.TextureLoader().load( "/sources/radar.png" );
    const materiale = new THREE.MeshBasicMaterial( { map: texture } );
    const floor = new THREE.Mesh( radargeo, materiale);
-   scene.add(floor);
+//    scene.add(floor);
 
 floor.rotateX(-Math.PI / 2);
 }

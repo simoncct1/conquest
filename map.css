@@ -13,7 +13,7 @@ canvas#bite{
     width:40vw !important; 
     position: absolute;
     top: 25%;
-    left: 15%;
+    left: 10%;
     box-shadow: rgba(255, 255, 255, 0.13) 1px -8px 7px 0px, rgba(255, 255, 255, 0.103) 0px 0px 9px 7px;
     border-radius: 10px;
     border: 8px solid white;
@@ -23,7 +23,7 @@ canvas#map2{
     width:40vw !important;  
     position: absolute;
     top: 25%;
-    right: 15%;
+    right: -90%;
     box-shadow: rgba(255, 255, 255, 0.13) 1px -8px 7px 0px, rgba(255, 255, 255, 0.103) 0px 0px 9px 7px;
     border-radius: 10px;
     border: 8px solid white;
